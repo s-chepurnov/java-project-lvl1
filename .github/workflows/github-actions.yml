@@ -4,5 +4,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: make build
-      - run: echo "This job's status is ${{ job.status }}."
+      - name: checkout repo
+      uses: actions/checkout@v2
+      - name: build
+      run: make build
+      - name: status
+      run: echo "This job's status is ${{ job.status }}."
