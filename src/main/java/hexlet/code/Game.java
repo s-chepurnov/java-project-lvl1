@@ -9,6 +9,10 @@ class Game {
     public static final int GREET = 1;
     public static final int EVEN = 2;
 
+    public static final int TOTAL_ATTEMPTS = 3;
+    public static final int RANGE_MAX = 100;
+
+
     public String greet() {
         System.out.println("Welcome to the Brain Games!");
 
@@ -26,13 +30,15 @@ class Game {
         String gamerName = this.greet();
 
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        int correctAnswers = 0;
 
-        while (correctAnswers < 3) {
+        var correctAnswers = 0;
+
+        while (correctAnswers < TOTAL_ATTEMPTS) {
 
             Random r = new Random();
-            int rangeMax = 100;
-            int number = r.nextInt(rangeMax);
+
+            int number = r.nextInt(RANGE_MAX);
+
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
 
