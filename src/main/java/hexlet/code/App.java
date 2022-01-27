@@ -7,6 +7,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Cacl");
         System.out.println("0 - Exit");
 
         Scanner sc = new Scanner(System.in);
@@ -23,6 +24,8 @@ public class App {
             game.greet();
         } else if (number == Game.EVEN) {
             game.even();
+        } else if (number == Game.CALC) {
+            game.calc();
         }
     }
 }

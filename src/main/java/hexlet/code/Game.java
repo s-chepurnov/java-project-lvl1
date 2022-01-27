@@ -8,10 +8,11 @@ class Game {
     public static final int EXIT = 0;
     public static final int GREET = 1;
     public static final int EVEN = 2;
+    public static final int CALC = 3;
 
     public static final int TOTAL_ATTEMPTS = 3;
     public static final int RANGE_MAX = 100;
-
+    public static final int CHOICE_SIGN = 3;
 
     public String greet() {
         System.out.println("Welcome to the Brain Games!");
@@ -36,7 +37,6 @@ class Game {
         while (correctAnswers < TOTAL_ATTEMPTS) {
 
             Random r = new Random();
-
             int number = r.nextInt(RANGE_MAX);
 
             System.out.println("Question: " + number);
@@ -65,4 +65,46 @@ class Game {
 
         System.out.println("Congratulations, " + gamerName + "!");
     }
+
+    public void calc() {
+        String gamerName = this.greet();
+        System.out.println("What is the result of the expression?");
+        var correctAnswers = 0;
+
+        while (correctAnswers < TOTAL_ATTEMPTS) {
+            Random r = new Random();
+            int number1 = r.nextInt(RANGE_MAX);
+            int number2 = r.nextInt(RANGE_MAX);
+            int sign = r.nextInt(CHOICE_SIGN);
+
+            int rightAnswer = 0;
+            if (sign == 0) {
+                System.out.println("Question: " + number1 + "+" + number2);
+                rightAnswer = number1 + number2;
+            } else if (sign == 1) {
+                System.out.println("Question: " + number1 + "-" + number2);
+                rightAnswer = number1 - number2;
+            } else if (sign == 2) {
+                System.out.println("Question: " + number1 + "*" + number2);
+                rightAnswer = number1 * number2;
+            }
+
+            System.out.print("Your answer: ");
+
+            Scanner sc = new Scanner(System.in);
+            int answer = sc.nextInt();
+
+            if (answer == rightAnswer) {
+                System.out.println("Correct!");
+                correctAnswers++;
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
+                System.out.println("Let's try again, " + gamerName + "!");
+            }
+        }
+
+        System.out.println("Congratulations, " + gamerName + "!");
+
+    }
+
 }
