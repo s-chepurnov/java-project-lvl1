@@ -5,15 +5,15 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression implements Game {
+public final class Progression implements Game {
 
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX_NUMBER = 3;
 
-    public String gamerName;
+    private final String gamerName;
 
-    public Progression(String gamerName) {
-        this.gamerName = gamerName;
+    public Progression(String name) {
+        this.gamerName = name;
     }
 
     @Override

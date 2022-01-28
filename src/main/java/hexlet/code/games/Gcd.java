@@ -5,12 +5,12 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Gcd implements Game {
+public final class Gcd implements Game {
 
-    public String gamerName;
+    private final String gamerName;
 
-    public Gcd(String gamerName) {
-        this.gamerName = gamerName;
+    public Gcd(String name) {
+        this.gamerName = name;
     }
 
     @Override
@@ -45,10 +45,11 @@ public class Gcd implements Game {
     }
 
     private int gcd(int a, int b) {
-        if (b == 0)
+        if (b == 0) {
             return a;
-        else
+        } else {
             return gcd(b, a % b);
+        }
     }
 
 }

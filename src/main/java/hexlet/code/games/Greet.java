@@ -2,9 +2,9 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-public class Greet implements Game {
+public final class Greet implements Game {
 
-    public String gamerName;
+    private String gamerName;
 
     public Greet() {
     }
@@ -20,5 +20,9 @@ public class Greet implements Game {
         this.gamerName = name;
 
         System.out.println("Hello, " + name + "!");
+    }
+
+    public String getGamerName() {
+        return gamerName;
     }
 }

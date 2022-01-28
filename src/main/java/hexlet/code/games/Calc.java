@@ -4,14 +4,14 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements Game {
+public final class Calc implements Game {
 
     public static final int OPERATOR_RANGE_NUMBER = 3;
 
-    public String gamerName;
+    private final String gamerName;
 
-    public Calc(String gamerName) {
-        this.gamerName = gamerName;
+    public Calc(String name) {
+        this.gamerName = name;
     }
 
     @Override

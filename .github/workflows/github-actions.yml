@@ -6,4 +6,3 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: make build
-    - run: echo "This job's status is ${{ job.status }}."
