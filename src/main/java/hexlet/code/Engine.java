@@ -7,6 +7,7 @@ import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.GameType;
 import hexlet.code.games.Game;
+import hexlet.code.games.Prime;
 
 //import hexlet.code.games.Greet;
 //import hexlet.code.games.Even;
@@ -31,21 +32,20 @@ public final class Engine {
         greet.play();
         String gamerName = greet.getGamerName();
 
-        Game game;
+        Game game = new Greet();
         if (gameNumber == GameType.EVEN.getNumber()) {
             game = new Even(gamerName);
-            game.play();
         } else if (gameNumber == GameType.CALC.getNumber()) {
             game = new Calc(gamerName);
-            game.play();
         } else if (gameNumber == GameType.GCD.getNumber()) {
             game = new Gcd(gamerName);
-            game.play();
         } else if (gameNumber == GameType.PROGRESSION.getNumber()) {
             game = new Progression(gamerName);
-            game.play();
+        } else if (gameNumber == GameType.PRIME.getNumber()) {
+            game = new Prime(gamerName);
         }
 
+        game.play();
     }
 
 }

@@ -6,7 +6,8 @@ public enum GameType {
     EVEN(2),
     CALC(3),
     GCD(4),
-    PROGRESSION(5);
+    PROGRESSION(5),
+    PRIME(6);
 
     private final int number;
 

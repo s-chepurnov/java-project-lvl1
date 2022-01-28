@@ -12,7 +12,12 @@ Calc game:
 [![asciicast](https://asciinema.org/a/464737.svg)](https://asciinema.org/a/464737)
 
 GCD game:
+
 [![asciicast](https://asciinema.org/a/464928.svg)](https://asciinema.org/a/464928)
+
 
 Progression game:
 [![asciicast](https://asciinema.org/a/464933.svg)](https://asciinema.org/a/464933)
+
+Prime game:
+[![asciicast](https://asciinema.org/a/464934.svg)](https://asciinema.org/a/464934)

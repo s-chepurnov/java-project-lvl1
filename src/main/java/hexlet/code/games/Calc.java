@@ -52,7 +52,6 @@ public final class Calc implements Game {
         }
 
         System.out.println("Congratulations, " + gamerName + "!");
-
     }
 
 }
