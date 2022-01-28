@@ -20,7 +20,7 @@ public final class Gcd {
             System.out.println("Question: " + number1 + " " + number2);
             System.out.print("Your answer: ");
 
-            int answer = 0;
+            int answer;
             try {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextInt();

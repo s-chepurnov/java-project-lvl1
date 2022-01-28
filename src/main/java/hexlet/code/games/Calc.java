@@ -20,19 +20,19 @@ public final class Calc {
 
             int rightAnswer = 0;
             if (operator == 0) {
-                System.out.println("Question: " + number1 + "+" + number2);
+                System.out.println("Question: " + number1 + " + " + number2);
                 rightAnswer = number1 + number2;
             } else if (operator == 1) {
-                System.out.println("Question: " + number1 + "-" + number2);
+                System.out.println("Question: " + number1 + " - " + number2);
                 rightAnswer = number1 - number2;
             } else if (operator == 2) {
-                System.out.println("Question: " + number1 + "*" + number2);
+                System.out.println("Question: " + number1 + " * " + number2);
                 rightAnswer = number1 * number2;
             }
 
             System.out.print("Your answer: ");
 
-            int answer = 0;
+            int answer;
             try {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextInt();
