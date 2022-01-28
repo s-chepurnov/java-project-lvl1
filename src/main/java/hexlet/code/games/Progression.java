@@ -38,8 +38,13 @@ public final class Progression {
             System.out.println("Question: " + progression);
             System.out.print("Your answer: ");
 
-            Scanner sc = new Scanner(System.in);
-            int answer = sc.nextInt();
+            int answer = 0;
+            try {
+                Scanner sc = new Scanner(System.in);
+                answer = sc.nextInt();
+            } catch (Exception e) {
+                //ignore
+            }
 
             if (answer == rightAnswer) {
                 System.out.println("Correct!");
@@ -51,7 +56,6 @@ public final class Progression {
         }
 
         System.out.println("Congratulations, " + gamerName + "!");
-
     }
 
 }

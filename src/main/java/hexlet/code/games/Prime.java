@@ -17,26 +17,25 @@ public final class Prime {
             int number = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
 
             System.out.println("Question: " + number);
-
             System.out.print("Your answer: ");
 
-            Scanner sc = new Scanner(System.in);
-            String answer = sc.nextLine();
+            String answer = "";
+            try {
+                Scanner sc = new Scanner(System.in);
+                answer = sc.nextLine();
+            } catch (Exception e) {
+                //ignore
+            }
 
             boolean isPrime = isPrime(number);
+            String rightAnswer = isPrime ? "yes" : "no";
 
-            if (answer.equals("yes") && isPrime) {
+            if (answer.equals(rightAnswer)) {
                 System.out.println("Correct!");
                 correctAnswers++;
-            } else if (answer.equals("yes") && !isPrime) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + gamerName + "!");
-            } else if (answer.equals("no") && isPrime) {
-                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + gamerName + "!");
-            } else if (answer.equals("no") && !isPrime) {
-                System.out.println("Correct!");
-                correctAnswers++;
             }
         }
 

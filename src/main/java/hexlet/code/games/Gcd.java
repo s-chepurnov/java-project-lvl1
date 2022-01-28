@@ -18,11 +18,15 @@ public final class Gcd {
             int number2 = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
 
             System.out.println("Question: " + number1 + " " + number2);
-
             System.out.print("Your answer: ");
 
-            Scanner sc = new Scanner(System.in);
-            int answer = sc.nextInt();
+            int answer = 0;
+            try {
+                Scanner sc = new Scanner(System.in);
+                answer = sc.nextInt();
+            } catch (Exception e) {
+                //ignore
+            }
 
             int rightAnswer = gcd(number1, number2);
             if (answer == rightAnswer) {

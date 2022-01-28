@@ -19,23 +19,22 @@ public final class Even {
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
 
-            Scanner sc = new Scanner(System.in);
-            String answer = sc.nextLine();
+            String answer = "";
+            try {
+                Scanner sc = new Scanner(System.in);
+                answer = sc.nextLine();
+            } catch (Exception e) {
+                //ignore
+            }
 
             boolean even = (number % 2 == 0);
-
-            if (answer.equals("yes") && even) {
+            String rightAnswer = even ? "yes" : "no";
+            if (answer.equals(rightAnswer)) {
                 System.out.println("Correct!");
                 correctAnswers++;
-            } else if (answer.equals("yes") && !even) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + gamerName + "!");
-            } else if (answer.equals("no") && even) {
-                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + gamerName + "!");
-            } else if (answer.equals("no") && !even) {
-                System.out.println("Correct!");
-                correctAnswers++;
             }
 
         }
