@@ -9,14 +9,6 @@ import hexlet.code.games.GameType;
 import hexlet.code.games.Game;
 import hexlet.code.games.Prime;
 
-//import hexlet.code.games.Greet;
-//import hexlet.code.games.Even;
-//import hexlet.code.games.Calc;
-//import hexlet.code.games.Gcd;
-//import hexlet.code.games.Progression;
-//import hexlet.code.games.GameType;
-//import hexlet.code.games.Game;
-
 public final class Engine {
 
     public static final int TOTAL_ROUNDS_IN_GAME = 3;
