@@ -27,8 +27,7 @@ public final class Prime {
                 //ignore
             }
 
-            boolean isPrime = isPrime(number);
-            String rightAnswer = isPrime ? "yes" : "no";
+            String rightAnswer = isPrime(number) ? "yes" : "no";
 
             if (answer.equals(rightAnswer)) {
                 System.out.println("Correct!");

@@ -17,7 +17,7 @@ public final class Even {
             int number = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
 
             System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
+            System.out.println("Your answer: ");
 
             String answer = "";
             try {
