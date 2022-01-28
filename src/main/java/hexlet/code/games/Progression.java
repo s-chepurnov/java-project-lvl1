@@ -35,10 +35,10 @@ public final class Progression {
                 currentElement = currentElement + step;
             }
 
-            System.out.println("Question: " + progression);
+            System.out.println("Question:" + progression);
             System.out.print("Your answer: ");
 
-            int answer = 0;
+            int answer;
             try {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextInt();
