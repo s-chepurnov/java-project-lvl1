@@ -1,42 +1,48 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements Game {
+public class Progression implements Game {
 
-    public static final int OPERATOR_RANGE_NUMBER = 3;
+    public static final int PROGRESSION_LENGTH = 10;
+    public static final int STEP_MAX_NUMBER = 3;
 
     public String gamerName;
 
-    public Calc(String gamerName) {
+    public Progression(String gamerName) {
         this.gamerName = gamerName;
     }
 
     @Override
     public void play() {
-        System.out.println("What is the result of the expression?");
+        System.out.println("What number is missing in the progression?");
         var correctAnswers = 0;
 
         while (correctAnswers < Engine.TOTAL_ROUNDS_IN_GAME) {
+
             Random r = new Random();
-            int number1 = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
-            int number2 = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
-            int operator = r.nextInt(OPERATOR_RANGE_NUMBER);
+            int startProgression = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
+            int step = r.nextInt(STEP_MAX_NUMBER) + 1;
+            int hiddenElement = r.nextInt(PROGRESSION_LENGTH);
 
             int rightAnswer = 0;
-            if (operator == 0) {
-                System.out.println("Question: " + number1 + "+" + number2);
-                rightAnswer = number1 + number2;
-            } else if (operator == 1) {
-                System.out.println("Question: " + number1 + "-" + number2);
-                rightAnswer = number1 - number2;
-            } else if (operator == 2) {
-                System.out.println("Question: " + number1 + "*" + number2);
-                rightAnswer = number1 * number2;
+            String progression = "";
+            int currentElement = startProgression;
+            for (int i = 0; i < PROGRESSION_LENGTH; ++i) {
+
+                if (i == hiddenElement) {
+                    progression += " ..";
+                    rightAnswer = currentElement;
+                } else {
+                    progression += " " + currentElement;
+                }
+                currentElement = currentElement + step;
             }
 
+            System.out.println("Question: " + progression);
             System.out.print("Your answer: ");
 
             Scanner sc = new Scanner(System.in);
