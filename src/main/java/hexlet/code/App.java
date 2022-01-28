@@ -20,7 +20,6 @@ public class App {
 
         System.out.println("");
 
-        Engine engine = new Engine();
-        engine.chooseGame(gameNumber);
+        Engine.chooseGame(gameNumber);
     }
 }

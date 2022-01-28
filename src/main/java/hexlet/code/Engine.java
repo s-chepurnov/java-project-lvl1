@@ -20,7 +20,7 @@ public final class Engine {
     public static final int TOTAL_ROUNDS_IN_GAME = 3;
     public static final int QUESTION_RANGE_NUMBER = 100;
 
-    public void chooseGame(int gameNumber) {
+    public static void chooseGame(int gameNumber) {
         if (gameNumber == EXIT) {
             return;
         }
