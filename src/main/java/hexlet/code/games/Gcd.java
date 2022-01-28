@@ -5,16 +5,9 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Gcd implements Game {
+public final class Gcd {
 
-    private final String gamerName;
-
-    public Gcd(String name) {
-        this.gamerName = name;
-    }
-
-    @Override
-    public void play() {
+    public static void play(String gamerName) {
         System.out.println("Find the greatest common divisor of given numbers.");
         var correctAnswers = 0;
 
@@ -44,7 +37,7 @@ public final class Gcd implements Game {
         System.out.println("Congratulations, " + gamerName + "!");
     }
 
-    private int gcd(int a, int b) {
+    private static int gcd(int a, int b) {
         if (b == 0) {
             return a;
         } else {

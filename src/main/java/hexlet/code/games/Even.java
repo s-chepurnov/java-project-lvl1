@@ -4,16 +4,9 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Even implements Game {
+public final class Even {
 
-    private final String gamerName;
-
-    public Even(String name) {
-        this.gamerName = name;
-    }
-
-    @Override
-    public void play() {
+    public static void play(String gamerName) {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
 
         var correctAnswers = 0;

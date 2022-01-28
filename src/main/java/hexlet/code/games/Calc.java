@@ -4,18 +4,11 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Calc implements Game {
+public final class Calc {
 
     public static final int OPERATOR_RANGE_NUMBER = 3;
 
-    private final String gamerName;
-
-    public Calc(String name) {
-        this.gamerName = name;
-    }
-
-    @Override
-    public void play() {
+    public static void play(String gamerName) {
         System.out.println("What is the result of the expression?");
         var correctAnswers = 0;
 

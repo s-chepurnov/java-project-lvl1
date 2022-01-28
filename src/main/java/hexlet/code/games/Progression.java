@@ -5,19 +5,12 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Progression implements Game {
+public final class Progression {
 
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX_NUMBER = 3;
 
-    private final String gamerName;
-
-    public Progression(String name) {
-        this.gamerName = name;
-    }
-
-    @Override
-    public void play() {
+    public static void play(String gamerName) {
         System.out.println("What number is missing in the progression?");
         var correctAnswers = 0;
 

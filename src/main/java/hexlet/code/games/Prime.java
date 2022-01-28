@@ -5,16 +5,9 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Prime implements Game {
+public final class Prime {
 
-    private final String gamerName;
-
-    public Prime(String name) {
-        this.gamerName = name;
-    }
-
-    @Override
-    public void play() {
+    public static void play(String gamerName) {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         var correctAnswers = 0;
 
@@ -50,7 +43,7 @@ public final class Prime implements Game {
         System.out.println("Congratulations, " + gamerName + "!");
     }
 
-    private boolean isPrime(int n) {
+    private static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
         }
