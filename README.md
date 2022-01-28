@@ -9,5 +9,5 @@ https://ru.hexlet.io/programs/java/projects/61
 
 ![example workflow](https://github.com/s-chepurnov/java-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
 
-#Asciinema
+# Asciinema
 [![asciicast](https://asciinema.org/a/464965.svg)](https://asciinema.org/a/464965)
