@@ -43,7 +43,7 @@ public final class Progression {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextInt();
             } catch (Exception e) {
-                //ignore
+                return;
             }
 
             if (answer == rightAnswer) {
@@ -52,6 +52,7 @@ public final class Progression {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + gamerName + "!");
+                return;
             }
         }
 

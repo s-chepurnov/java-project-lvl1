@@ -24,7 +24,7 @@ public final class Even {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextLine();
             } catch (Exception e) {
-                //ignore
+                return;
             }
 
             boolean even = (number % 2 == 0);
@@ -35,6 +35,7 @@ public final class Even {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + gamerName + "!");
+                return;
             }
 
         }

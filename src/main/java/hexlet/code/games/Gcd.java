@@ -25,7 +25,7 @@ public final class Gcd {
                 Scanner sc = new Scanner(System.in);
                 answer = sc.nextInt();
             } catch (Exception e) {
-                //ignore
+                return;
             }
 
             int rightAnswer = gcd(number1, number2);
@@ -35,6 +35,7 @@ public final class Gcd {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + gamerName + "!");
+                return;
             }
         }
 
