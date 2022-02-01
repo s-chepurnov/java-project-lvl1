@@ -28,7 +28,7 @@ public final class Progression {
         }
 
         Progression.correctAnswer = String.valueOf(rightAnswer);
-        return progression;
+        return progression.trim();
     }
 
     public static void play(String gamerName) {
