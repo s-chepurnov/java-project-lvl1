@@ -1,56 +1,42 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
-import java.util.Scanner;
 
 public final class Calc {
 
-    public static final int OPERATOR_RANGE_NUMBER = 3;
+    private static String correctAnswer = "";
+    private static final int OPERATOR_RANGE_NUMBER = 3;
+    private static final String[] OPERATORS = {" + ", " - ", " * "};
+
+    public static String getQuestion() {
+
+        int number1 = Utils.getRandomInt(Engine.QUESTION_RANGE_NUMBER);
+        int number2 = Utils.getRandomInt(Engine.QUESTION_RANGE_NUMBER);
+        int operatorIdx = Utils.getRandomInt(OPERATOR_RANGE_NUMBER);
+
+        String question = "Question: " + number1 + OPERATORS[operatorIdx] + number2;
+
+        Calc.correctAnswer = calc(number1, number2, operatorIdx);
+
+        return question;
+    }
 
     public static void play(String gamerName) {
         System.out.println("What is the result of the expression?");
-        var correctAnswers = 0;
+        Engine.play(gamerName, Engine.CALC);
+    }
 
-        while (correctAnswers < Engine.TOTAL_ROUNDS_IN_GAME) {
-            Random r = new Random();
-            int number1 = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
-            int number2 = r.nextInt(Engine.QUESTION_RANGE_NUMBER);
-            int operator = r.nextInt(OPERATOR_RANGE_NUMBER);
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
 
-            int rightAnswer = 0;
-            if (operator == 0) {
-                System.out.println("Question: " + number1 + " + " + number2);
-                rightAnswer = number1 + number2;
-            } else if (operator == 1) {
-                System.out.println("Question: " + number1 + " - " + number2);
-                rightAnswer = number1 - number2;
-            } else if (operator == 2) {
-                System.out.println("Question: " + number1 + " * " + number2);
-                rightAnswer = number1 * number2;
-            }
-
-            System.out.print("Your answer: ");
-
-            int answer;
-            try {
-                Scanner sc = new Scanner(System.in);
-                answer = sc.nextInt();
-            } catch (Exception e) {
-                return;
-            }
-
-            if (answer == rightAnswer) {
-                System.out.println("Correct!");
-                correctAnswers++;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + gamerName + "!");
-                return;
-            }
-        }
-
-        System.out.println("Congratulations, " + gamerName + "!");
+    public static String calc(int number1, int number2, int operatorIdx) {
+        return switch (operatorIdx) {
+            case 0 -> String.valueOf(number1 + number2);
+            case 1 -> String.valueOf(number1 - number2);
+            case 2 -> String.valueOf(number1 * number2);
+            default -> "0";
+        };
     }
 
 }
