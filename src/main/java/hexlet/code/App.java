@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Greet;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
@@ -31,18 +30,18 @@ public class App {
             return;
         }
 
-        String gamerName = Greet.play();
+        Cli.greet();
 
         if (gameNumber == Engine.EVEN) {
-            Even.play(gamerName);
+            Even.play();
         } else if (gameNumber == Engine.CALC) {
-            Calc.play(gamerName);
+            Calc.play();
         } else if (gameNumber == Engine.GCD) {
-            Gcd.play(gamerName);
+            Gcd.play();
         } else if (gameNumber == Engine.PROGRESSION) {
-            Progression.play(gamerName);
+            Progression.play();
         } else if (gameNumber == Engine.PRIME) {
-            Prime.play(gamerName);
+            Prime.play();
         }
     }
 }

@@ -1,11 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
-
 import java.util.Scanner;
 
 public final class Engine {
@@ -21,19 +15,12 @@ public final class Engine {
     public static final int TOTAL_ROUNDS_IN_GAME = 3;
     public static final int QUESTION_RANGE_NUMBER = 100;
 
-    public static void play(String gamerName, int gameNumber) {
+    public static void play(String gamerName, String[] questions, String[] rightAnswers) {
         var correctAnswers = 0;
-
+        var i = 0;
         while (correctAnswers < Engine.TOTAL_ROUNDS_IN_GAME) {
 
-            String question = switch (gameNumber) {
-                case EVEN -> Even.getQuestion();
-                case CALC -> Calc.getQuestion();
-                case GCD -> Gcd.getQuestion();
-                case PROGRESSION -> Progression.getQuestion();
-                case PRIME -> Prime.getQuestion();
-                default -> "";
-            };
+            String question = questions[i];
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
@@ -46,14 +33,7 @@ public final class Engine {
                 return;
             }
 
-            String rightAnswer = switch (gameNumber) {
-                case EVEN -> Even.getCorrectAnswer();
-                case CALC -> Calc.getCorrectAnswer();
-                case GCD -> Gcd.getCorrectAnswer();
-                case PROGRESSION -> Progression.getCorrectAnswer();
-                case PRIME -> Prime.getCorrectAnswer();
-                default -> "";
-            };
+            String rightAnswer = rightAnswers[i];
 
             if (isCorrectAnswer(answer, rightAnswer)) {
                 System.out.println("Correct!");
@@ -63,6 +43,8 @@ public final class Engine {
                 System.out.println("Let's try again, " + gamerName + "!");
                 return;
             }
+
+            ++i;
         }
 
         System.out.println("Congratulations, " + gamerName + "!");
