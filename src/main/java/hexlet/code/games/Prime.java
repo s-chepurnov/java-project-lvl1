@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.stream.IntStream;
-
 public final class Prime {
 
     public static String[][] getQA() {
@@ -31,7 +29,7 @@ public final class Prime {
     }
 
     private static boolean isPrime(int number) {
-        for (int i = 2; i*i <= number; i++) {
+        for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
                 return false;
             }
