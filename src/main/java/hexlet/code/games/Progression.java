@@ -1,18 +1,16 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public final class Progression {
 
-    private static String[] correctAnswers = new String[Engine.TOTAL_ROUNDS_IN_GAME];
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX_NUMBER = 3;
 
-    public static String[] getQuestions() {
+    public static String[][] getQA() {
 
-        String[] questions = new String[Engine.TOTAL_ROUNDS_IN_GAME];
+        String[][] qa = new String[Engine.TOTAL_ROUNDS_IN_GAME][2];
 
         var i = 0;
         while (i < Engine.TOTAL_ROUNDS_IN_GAME) {
@@ -33,20 +31,21 @@ public final class Progression {
                 }
                 currentElement = currentElement + step;
             }
-            questions[i] = progression.trim();
-            Progression.correctAnswers[i] = String.valueOf(rightAnswer);
+            qa[i][Engine.Q_IDX] = progression.trim();
+            qa[i][Engine.A_IDX] = String.valueOf(rightAnswer);
+
             ++i;
         }
 
-        return questions;
+        return qa;
     }
 
     public static void play() {
-        System.out.println("What number is missing in the progression?");
-        Engine.play(Cli.getGamerName(), Progression.getQuestions(), Progression.getCorrectAnswers());
+        Engine.play(getQA(), getRules());
     }
 
-    public static String[] getCorrectAnswers() {
-        return correctAnswers;
+    public static String getRules() {
+        return "What number is missing in the progression?";
     }
+
 }

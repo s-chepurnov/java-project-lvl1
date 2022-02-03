@@ -19,29 +19,29 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-
-        Scanner sc = new Scanner(System.in);
         System.out.print("Your choice: ");
-        int gameNumber = sc.nextInt();
 
-        System.out.println("");
+        int gameNumber;
+        try {
+            Scanner sc = new Scanner(System.in);
+            gameNumber = sc.nextInt();
+        } catch (Exception e) {
+            return;
+        }
 
         if (gameNumber == Engine.EXIT) {
             return;
         }
 
-        Cli.greet();
-
-        if (gameNumber == Engine.EVEN) {
-            Even.play();
-        } else if (gameNumber == Engine.CALC) {
-            Calc.play();
-        } else if (gameNumber == Engine.GCD) {
-            Gcd.play();
-        } else if (gameNumber == Engine.PROGRESSION) {
-            Progression.play();
-        } else if (gameNumber == Engine.PRIME) {
-            Prime.play();
+        switch (gameNumber) {
+            case Engine.GREET -> Engine.greet();
+            case Engine.EVEN -> Even.play();
+            case Engine.CALC -> Calc.play();
+            case Engine.GCD -> Gcd.play();
+            case Engine.PRIME -> Prime.play();
+            case Engine.PROGRESSION -> Progression.play();
+            default -> throw new RuntimeException("There is no such a game");
         }
+
     }
 }
