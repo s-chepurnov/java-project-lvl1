@@ -5,6 +5,8 @@ import hexlet.code.Utils;
 
 public final class Progression {
 
+    public static final String RULES = "What number is missing in the progression?";
+    public static final int QUESTION_RANGE_NUMBER = 100;
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX_NUMBER = 3;
 
@@ -14,7 +16,7 @@ public final class Progression {
 
         var i = 0;
         while (i < Engine.TOTAL_ROUNDS_IN_GAME) {
-            int startProgression = Utils.getRandomInt(Engine.QUESTION_RANGE_NUMBER);
+            int startProgression = Utils.getRandomInt(QUESTION_RANGE_NUMBER);
             int step = Utils.getRandomInt(STEP_MAX_NUMBER) + 1;
             int hiddenElement = Utils.getRandomInt(PROGRESSION_LENGTH);
 
@@ -41,11 +43,7 @@ public final class Progression {
     }
 
     public static void play() {
-        Engine.play(getQA(), getRules());
-    }
-
-    public static String getRules() {
-        return "What number is missing in the progression?";
+        Engine.play(getQA(), RULES);
     }
 
 }

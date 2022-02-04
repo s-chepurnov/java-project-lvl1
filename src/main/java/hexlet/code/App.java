@@ -10,6 +10,14 @@ import java.util.Scanner;
 
 public class App {
 
+    public static final int EXIT = 0;
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int GCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -29,17 +37,17 @@ public class App {
             return;
         }
 
-        if (gameNumber == Engine.EXIT) {
+        if (gameNumber == EXIT) {
             return;
         }
 
         switch (gameNumber) {
-            case Engine.GREET -> Engine.greet();
-            case Engine.EVEN -> Even.play();
-            case Engine.CALC -> Calc.play();
-            case Engine.GCD -> Gcd.play();
-            case Engine.PRIME -> Prime.play();
-            case Engine.PROGRESSION -> Progression.play();
+            case GREET -> Engine.play(new String[0][0], "");
+            case EVEN -> Even.play();
+            case CALC -> Calc.play();
+            case GCD -> Gcd.play();
+            case PRIME -> Prime.play();
+            case PROGRESSION -> Progression.play();
             default -> throw new RuntimeException("There is no such a game");
         }
 

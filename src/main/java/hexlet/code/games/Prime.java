@@ -5,12 +5,15 @@ import hexlet.code.Utils;
 
 public final class Prime {
 
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static final int QUESTION_RANGE_NUMBER = 100;
+
     public static String[][] getQA() {
         String[][] qa = new String[Engine.TOTAL_ROUNDS_IN_GAME][2];
 
         var i = 0;
         while (i < Engine.TOTAL_ROUNDS_IN_GAME) {
-            int number = Utils.getRandomInt(Engine.QUESTION_RANGE_NUMBER);
+            int number = Utils.getRandomInt(QUESTION_RANGE_NUMBER);
             qa[i][Engine.Q_IDX] = String.valueOf(number);
             qa[i][Engine.A_IDX] = isPrime(number) ? "yes" : "no";
 
@@ -21,11 +24,7 @@ public final class Prime {
     }
 
     public static void play() {
-        Engine.play(getQA(), getRules());
-    }
-
-    public static String getRules() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        Engine.play(getQA(), RULES);
     }
 
     private static boolean isPrime(int number) {

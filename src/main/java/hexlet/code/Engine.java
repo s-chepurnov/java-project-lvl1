@@ -4,39 +4,27 @@ import java.util.Scanner;
 
 public final class Engine {
 
-    public static final int EXIT = 0;
-    public static final int GREET = 1;
-    public static final int EVEN = 2;
-    public static final int CALC = 3;
-    public static final int GCD = 4;
-    public static final int PROGRESSION = 5;
-    public static final int PRIME = 6;
-
     public static final int TOTAL_ROUNDS_IN_GAME = 3;
-    public static final int QUESTION_RANGE_NUMBER = 100;
     public static final int Q_IDX = 0;
     public static final int A_IDX = 1;
 
-    private static String gamerName;
+    public static void play(String[][] qa, String rules) {
 
-    public static void greet() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
-        String name;
+        String gamerName;
         try {
             Scanner sc = new Scanner(System.in);
-            name = sc.nextLine();
+            gamerName = sc.nextLine();
         } catch (Exception e) {
             return;
         }
+        System.out.println("Hello, " + gamerName + "!");
 
-        Engine.gamerName = name;
-        System.out.println("Hello, " + name + "!");
-    }
-
-    public static void play(String[][] qa, String rules) {
-        greet();
+        if (qa == null || qa.length == 0 || rules == null || rules.isEmpty()) {
+            return;
+        }
 
         System.out.println(rules);
 
@@ -62,14 +50,14 @@ public final class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + getGamerName() + "!");
+                System.out.println("Let's try again, " + gamerName + "!");
                 return;
             }
 
             ++i;
         }
 
-        System.out.println("Congratulations, " + getGamerName() + "!");
+        System.out.println("Congratulations, " + gamerName + "!");
     }
 
     private static boolean isCorrectAnswer(String answer, String correctAnswer) {
@@ -80,7 +68,4 @@ public final class Engine {
         return correctAnswer.equals(answer.trim());
     }
 
-    public static String getGamerName() {
-        return gamerName;
-    }
 }
