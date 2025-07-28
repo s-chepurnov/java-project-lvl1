@@ -18,10 +18,10 @@ public final class Progression {
         while (i < Engine.ROUNDS) {
             int first = Utils.getRandomInt(QUESTION_RANGE_NUMBER);
             int step = Utils.getRandomInt(STEP_MAX_NUMBER) + 1;
-            int hiddenIndex = Utils.getRandomInt(PROGRESSION_LENGTH-1);
+            int hiddenIndex = Utils.getRandomInt(PROGRESSION_LENGTH - 1);
 
             String[] progression = makeProgression(first, step, PROGRESSION_LENGTH);
-            String answer= progression[hiddenIndex];
+            String answer = progression[hiddenIndex];
 
             progression[hiddenIndex] = "..";
             String question = String.join(" ", progression);
