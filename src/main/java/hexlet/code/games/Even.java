@@ -9,15 +9,15 @@ public final class Even {
     private static final int QUESTION_RANGE_NUMBER = 100;
 
     public static String[][] getQA() {
-        String[][] qa = new String[Engine.TOTAL_ROUNDS_IN_GAME][2];
+        String[][] qa = new String[Engine.ROUNDS][2];
 
         var i = 0;
-        while (i < Engine.TOTAL_ROUNDS_IN_GAME) {
+        while (i < Engine.ROUNDS) {
             int number = Utils.getRandomInt(QUESTION_RANGE_NUMBER);
-            qa[i][Engine.Q_IDX] = String.valueOf(number);
+            qa[i][0] = String.valueOf(number);
 
             boolean even = (number % 2 == 0);
-            qa[i][Engine.A_IDX] = even ? "yes" : "no";
+            qa[i][1] = even ? "yes" : "no";
 
             ++i;
         }

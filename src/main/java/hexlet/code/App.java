@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class App {
     public static final int PROGRESSION = 5;
     public static final int PRIME = 6;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -29,13 +29,8 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
-        int gameNumber;
-        try {
-            Scanner sc = new Scanner(System.in);
-            gameNumber = sc.nextInt();
-        } catch (Exception e) {
-            return;
-        }
+        Scanner sc = new Scanner(System.in);
+        int gameNumber = sc.nextInt();
 
         if (gameNumber == EXIT) {
             return;

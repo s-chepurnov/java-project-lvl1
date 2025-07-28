@@ -7,15 +7,8 @@ public class Cli {
     public static void greet() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-
-        String name;
-        try {
-            Scanner sc = new Scanner(System.in);
-            name = sc.nextLine();
-        } catch (Exception e) {
-            return;
-        }
-
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
     }
 
