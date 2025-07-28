@@ -8,3 +8,10 @@
 
 # Asciinema
 [![asciicast](https://asciinema.org/a/464965.svg)](https://asciinema.org/a/464965)
+
+# Run
+```sh
+cd app
+make install
+make run-dist
+```

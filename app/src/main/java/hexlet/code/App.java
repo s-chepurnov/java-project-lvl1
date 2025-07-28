@@ -18,7 +18,7 @@ public class App {
     public static final int PROGRESSION = 5;
     public static final int PRIME = 6;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -37,13 +37,13 @@ public class App {
         }
 
         switch (gameNumber) {
-            case GREET -> Engine.play(new String[0][0], "");
+            case GREET -> Cli.greet();
             case EVEN -> Even.play();
             case CALC -> Calc.play();
             case GCD -> Gcd.play();
             case PRIME -> Prime.play();
             case PROGRESSION -> Progression.play();
-            default -> throw new RuntimeException("There is no such a game");
+            default -> throw new RuntimeException("There is no such a game: " + gameNumber);
         }
 
     }

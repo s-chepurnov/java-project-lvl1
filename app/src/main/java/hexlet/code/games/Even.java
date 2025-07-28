@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public final class Even {
 
-    private static final String RULES = "What is the result of the expression?";
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int QUESTION_RANGE_NUMBER = 100;
 
     public static String[][] getQA() {
